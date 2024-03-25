@@ -4,7 +4,18 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+
+           string name=Helper.WelcomeMessage();
+
+            Player player = new Player(name);
+            Game game = new Game(player); //Create Game
+
+
+            game.Start();
+
+
+
+            
         }
     }
 }
