@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MathGame
+﻿namespace MathGame
 {
-    static class Helper 
+    static class Helper
     {
 
         /// <summary>
@@ -31,7 +23,7 @@ namespace MathGame
 
         }
 
-     
+
 
 
         public static string WelcomeMessage()
@@ -41,7 +33,7 @@ namespace MathGame
             string? name = Console.ReadLine();
             while (string.IsNullOrEmpty(name))
             {
-                Helper.Write("Please Player enter Your Name: ",ConsoleColor.Red);
+                Helper.Write("Please Player enter Your Name: ", ConsoleColor.Red);
                 name = Console.ReadLine();
             }
             return name;
@@ -61,19 +53,19 @@ namespace MathGame
 
                 }
                 else
-                Console.WriteLine();
-                Helper.Write($"{choice} is not a valid Option enter a different Value: ",ConsoleColor.Red);
-                choice = Console.ReadLine(); 
+                    Console.WriteLine();
+                Helper.Write($"{choice} is not a valid Option enter a different Value: ", ConsoleColor.Red);
+                choice = Console.ReadLine();
 
             }
-         
-           
 
 
-         }
 
 
-        public static void Write(string message,ConsoleColor color)
+        }
+
+
+        public static void Write(string message, ConsoleColor color)
         {
             Console.ForegroundColor = color;
             Console.Write(message);
@@ -81,14 +73,25 @@ namespace MathGame
 
 
         }   /// Change Foreground color to desired Color after executing returns the foreground to white. Does not Skip
-        public static void WriteLine(string message,ConsoleColor color) 
-            {
+        public static void WriteLine(string message, ConsoleColor color)
+        {
             Console.ForegroundColor = color;
             Console.WriteLine(message);
             Console.ForegroundColor = ConsoleColor.White;
-            } /// Change Foreground color to desired Color after executing returns the foreground to white. Skips Line
+        } /// Change Foreground color to desired Color after executing returns the foreground to white. Skips Line
 
-        
+
+        public delegate int Operations(int Number1, int number2);
+
+        public static int Add(int number1, int number2) => number1 + number2;
+        public static int Substraction(int number1, int number2) => number1 - number2;
+
+        public static int Multiply(int number1, int number2) => number1 * number2;
+        public static int Divide(int number1, int number2) => number1 / number2;
+
+
+
+
 
 
 
