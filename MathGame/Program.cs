@@ -9,8 +9,6 @@
 
             Player player = new Player(name);
             Game game = new Game(player); //Create Game
-
-
             game.Start();
 
 

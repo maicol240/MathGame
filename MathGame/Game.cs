@@ -28,14 +28,12 @@ namespace MathGame
 
 
         public void Start()
-        {
-            
-
-            Helper.Menu(); ///Display Menu
+        {            
+            Helper.DisplayMenu(); ///Display Menu
             string? choice = Console.ReadLine();
-            int value=Helper.MenuInputValid(choice);
-           
-            
+            int value=Helper.MenuInputValid(choice); /// Gets the Choice
+
+
 
 
 
@@ -48,7 +46,14 @@ namespace MathGame
 
 
 
+
+
+
+
+
     }
+
+
 
 
     enum Operations { 
@@ -69,4 +74,6 @@ namespace MathGame
 
 
     }
+
+
 }

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,9 +12,9 @@ namespace MathGame
     {
 
         /// <summary>
-        /// Menus they wont skip a line went called  
+        /// Contantains menus and Write(Desired Color)Method
         /// </summary>
-        public static void Menu()  //Menu
+        public static void DisplayMenu()  //Menu
         {
             Console.WriteLine(" -----Menu------");
             Console.Write("|"); Console.Write("1)Add"); Console.WriteLine("\t    \t|");
@@ -39,7 +41,7 @@ namespace MathGame
             string? name = Console.ReadLine();
             while (string.IsNullOrEmpty(name))
             {
-                Console.Write("Please Player enter Your Name: ");
+                Helper.Write("Please Player enter Your Name: ",ConsoleColor.Red);
                 name = Console.ReadLine();
             }
             return name;
@@ -59,29 +61,46 @@ namespace MathGame
 
                 }
                 else
-                    Console.WriteLine($"{choice} is not a valid Option");
-                    choice = Console.ReadLine(); 
+                Console.WriteLine();
+                Helper.Write($"{choice} is not a valid Option enter a different Value: ",ConsoleColor.Red);
+                choice = Console.ReadLine(); 
 
             }
          
-
+           
 
 
          }
 
 
+        public static void Write(string message,ConsoleColor color)
+        {
+            Console.ForegroundColor = color;
+            Console.Write(message);
+            Console.ForegroundColor = ConsoleColor.White;
+
+
+        }   /// Change Foreground color to desired Color after executing returns the foreground to white. Does not Skip
+        public static void WriteLine(string message,ConsoleColor color) 
+            {
+            Console.ForegroundColor = color;
+            Console.WriteLine(message);
+            Console.ForegroundColor = ConsoleColor.White;
+            } /// Change Foreground color to desired Color after executing returns the foreground to white. Skips Line
+
+        
 
 
 
-
-
-
-
-        }
-      
 
 
 
 
     }
+
+
+
+
+
+}
 
